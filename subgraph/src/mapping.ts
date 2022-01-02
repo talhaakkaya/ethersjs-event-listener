@@ -18,7 +18,7 @@ export function handleRecovered(event: Recovered): void {}
 export function handleRewardAdded(event: RewardAdded): void {}
 
 export function handleRewardPaid(event: RewardPaid): void {
-  let user = User.load(event.params.user.toString());
+  let user = User.load(event.params.user.toHexString());
 
   if (!user) return;
 
@@ -32,10 +32,10 @@ export function handleRewardsDurationUpdated(
 ): void {}
 
 export function handleStaked(event: Staked): void {
-  let user = User.load(event.params.user.toString());
+  let user = User.load(event.params.user.toHexString());
 
   if (!user) {
-    user = new User(event.params.user.toString());
+    user = new User(event.params.user.toHexString());
   }
 
   user.stakedAmount = event.params.amount;
@@ -44,7 +44,7 @@ export function handleStaked(event: Staked): void {
 }
 
 export function handleWithdrawn(event: Withdrawn): void {
-  let user = User.load(event.params.user.toString());
+  let user = User.load(event.params.user.toHexString());
 
   if (!user) return;
 
