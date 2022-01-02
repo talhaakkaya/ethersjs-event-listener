@@ -36,10 +36,12 @@ export function handleStaked(event: Staked): void {
 
   if (!user) {
     user = new User(event.params.user.toHexString());
+    user.paidRewards = BigInt.zero();
+    user.stakedAmount = BigInt.zero();
+    user.save();
   }
 
   user.stakedAmount = event.params.amount;
-  user.paidRewards = BigInt.zero();
   user.save();
 }
 
