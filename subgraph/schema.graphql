@@ -1,0 +1,12 @@
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type User @entity {
+  id: ID!
+  stakedAmount: BigInt!
+  paidRewards: BigInt!
+}

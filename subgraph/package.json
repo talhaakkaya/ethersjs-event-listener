@@ -1,0 +1,16 @@
+{
+  "name": "png-stake",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ root36x9/png-stake",
+    "create-local": "graph create --node http://localhost:8020/ root36x9/png-stake",
+    "remove-local": "graph remove --node http://localhost:8020/ root36x9/png-stake",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 root36x9/png-stake"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.23.1",
+    "@graphprotocol/graph-ts": "0.23.1"
+  }
+}
